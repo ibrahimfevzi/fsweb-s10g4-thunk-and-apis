@@ -17,14 +17,19 @@ const initial = {
 };
 
 function writeFavsToLocalStorage(favs) {
-  localStorage.setItem("favs", JSON.stringify(favs));
+  try {
+    localStorage.setItem("favs", JSON.stringify(favs));
+  } catch (error) {
+    console.error("localStorage error:", error);
+  }
 }
 
 function readFavsFromLocalStorage() {
-  const favs = localStorage.getItem("favs");
-  if (favs !== null) {
-    return JSON.parse(favs);
-  } else {
+  try {
+    const favs = localStorage.getItem("favs");
+    return favs ? JSON.parse(favs) : [];
+  } catch (error) {
+    console.error("localStorage error:", error);
     return [];
   }
 }
