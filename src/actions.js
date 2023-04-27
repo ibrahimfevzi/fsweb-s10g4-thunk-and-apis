@@ -11,8 +11,8 @@ export const getFavsFromLocalStorage = () => {
   return { type: GET_FAVS_FROM_LS };
 };
 
-export const addFav = (info) => {
-  return { type: FAV_ADD, payload: info };
+export const addFav = ({ id, activity }) => {
+  return { type: FAV_ADD, payload: { id, activity } };
 };
 
 export const removeFav = (id) => {

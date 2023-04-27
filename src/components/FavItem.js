@@ -12,7 +12,7 @@ function FavItem({ id, activity }) {
   return (
     <div className="bg-white shadow hover:shadow-lg p-3 pl-5 flex items-center group transition-all">
       {/* <div className="flex-1 pr-4">{title}</div> */}
-      <h2>{activity}</h2>
+      <div className="flex-1 pr-4">{activity}</div>
 
       <button
         onClick={() => delFav(id)}
